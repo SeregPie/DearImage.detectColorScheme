@@ -1,1 +1,1 @@
-# PaperDuck.extractColorScheme
+# DearImage.detectColorScheme

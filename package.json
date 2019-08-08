@@ -1,28 +1,25 @@
 {
-	"name": "paper-duck.extract-color-scheme",
-	"version": "1.0.0",
+	"name": "dear-image.detect-color-scheme",
+	"version": "0.0.0",
 	"description": "...",
 	"keywords": [],
 	"license": "MIT",
 	"author": "Sergej Sintschilin <seregpie@gmail.com>",
 	"files": [],
 	"main": "index.js",
-	"repository": "github:SeregPie/PaperDuck.extractColorScheme",
+	"repository": "github:SeregPie/DearImage.detectColorScheme",
 	"scripts": {
 		"build": "rollup -c",
 		"prepublishOnly": "npm run build",
 		"test": "node test"
 	},
-	"dependencies": {
-		"@seregpie/k-means": "^1.0.1",
-		"canvas": "^2.5.0"
-	},
 	"devDependencies": {
-		"rollup": "^1.17.0",
+		"dear-image": "^0.0.0",
+		"rollup": "^1.19.4",
 		"rollup-plugin-buble": "^0.19.8",
 		"rollup-plugin-terser": "^5.1.1"
 	},
 	"peerDependencies": {
-		"paperduck": "^20.0.0"
+		"dear-image": "^0.0.0"
 	}
 }

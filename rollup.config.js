@@ -4,8 +4,7 @@ import buble from 'rollup-plugin-buble';
 import {main} from './package.json';
 
 let globals = {
-	'@seregpie/k-means': 'KMeans',
-	'paperduck': 'PaperDuck',
+	'dear-image': 'DearImage',
 };
 
 export default {
