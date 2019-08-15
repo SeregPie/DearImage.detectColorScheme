@@ -1,12 +1,33 @@
 import DearImage from 'dear-image';
+import KMeansPlusPlus from '@seregpie/k-means-plus-plus';
 
-DearImage.detectColorScheme = function() {
-	return Promise
-		.resolve()
-		.then(() => {
-			return [
-				['#ffffff', 2/3],
-				['#000000', 1/3],
-			];
-		});
+import DearColor from './DearColor';
+
+import Array_last from './utils/Array/last';
+
+DearImage.detectColorScheme = function(image) {
+	return DearImage.loadFromExcept(image).then(image => {
+		let {data} = image.toImageData();
+		let vectors = [];
+		for (let i = 0, ii = data.length; i < ii; i += 4) {
+			if (data[i + 3]) {
+				let r = data[i + 0];
+				let g = data[i + 1];
+				let b = data[i + 2];
+				vectors.push([r, g, b]);
+			}
+		}
+		let clusters = KMeansPlusPlus(vectors, 32)
+			.filter(cluster => cluster.length / vectors.length > 1/16)
+			.sort((cluster, otherCluster) => otherCluster.length - cluster.length);
+		if (clusters.length) {
+			let lastCluster = Array_last(clusters);
+			return clusters.map(cluster => {
+				let weight = Math.round(cluster.length / lastCluster.length);
+				let color = `${DearColor.mean(cluster)}`;
+				return [color, weight];
+			});
+		}
+		return [];
+	});
 };

@@ -1,13 +1,14 @@
-let assert = require('assert');
+let Assert = require('assert').strict;
+let Path = require('path');
 
 require('./index');
 let DearImage = require('dear-image');
 
 (async () => {
-	let imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Milka_Logo.svg/220px-Milka_Logo.svg.png';
-	let imageColorScheme = await DearImage.detectColorScheme(imageUrl);
-	assert.deepStrictEqual(imageColorScheme, [
-		['#ffffff', 2/3],
-		['#000000', 1/3],
+	let path = Path.resolve(__dirname, './images/paper-clips.png');
+	let colorScheme = await DearImage.detectColorScheme(path);
+	Assert.deepEqual(colorScheme, [
+		['#fe6e29', 1],
+		['#fe732d', 1],
 	]);
 })();
