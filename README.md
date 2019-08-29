@@ -1,8 +1,6 @@
 # DearImage.detectColorScheme
 
-```
-DearImage.detectColorScheme(image)
-```
+`DearImage.detectColorScheme(image)`
 
 Detects image color scheme.
 
@@ -46,5 +44,5 @@ let DearImage = require('dear-image');
 
 ```javascript
 let colorScheme = await DearImage.detectColorScheme(image);
-// => [['#11111', 0.73], ['#11111', 0.27]]
+// => [['#acacac', 9], ['#24ff00', 1]]
 ```
