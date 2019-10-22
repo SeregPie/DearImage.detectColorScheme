@@ -2,7 +2,13 @@
 
 `DearImage.detectColorScheme(image)`
 
-Detects image color scheme.
+Detects the image color scheme.
+
+| argument | description |
+| ---: | :--- |
+| `image` | Everything the function `.loadFrom` supports. |
+
+Returns a promise that resolves to the detected color scheme.
 
 ## dependencies
 
@@ -13,17 +19,17 @@ Detects image color scheme.
 ### npm
 
 ```shell
-npm install dear-image.detect-color-scheme
+npm i dear-image.detect-color-scheme
 ```
 
-### es6
+### ES module
 
 ```javascript
 import 'dear-image.detect-color-scheme';
 import DearImage from 'dear-image';
 ```
 
-### node
+### Node
 
 ```javascript
 require('dear-image.detect-color-scheme');
