@@ -18,6 +18,7 @@ DearImage.detectColorScheme = function(image) {
 			}
 		}
 		let clusters = KMeansPlusPlus(vectors, 4)
+			.filter(({length}) => length)
 			.sort((a, b) => b.length - a.length);
 		if (clusters.length) {
 			let lastCluster = Array_prototype_last(clusters);

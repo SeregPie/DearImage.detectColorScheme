@@ -1,6 +1,6 @@
 {
 	"name": "dear-image.detect-color-scheme",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Detects the image color scheme.",
 	"keywords": [],
 	"license": "MIT",
