@@ -41,6 +41,7 @@ let DearImage = require('dear-image');
 ```html
 <script src="https://unpkg.com/dear-image"></script>
 <script src="https://unpkg.com/just-my-luck"></script>
+<script src="https://unpkg.com/@seregpie/vector-math"></script>
 <script src="https://unpkg.com/@seregpie/k-means"></script>
 <script src="https://unpkg.com/@seregpie/k-means-plus-plus"></script>
 <script src="https://unpkg.com/dear-image.detect-color-scheme"></script>

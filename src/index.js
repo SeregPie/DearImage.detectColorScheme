@@ -24,7 +24,7 @@ DearImage.detectColorScheme = function(image) {
 			let lastCluster = Array_prototype_last(clusters);
 			return clusters.map(cluster => {
 				let weight = Math.round(cluster.length / lastCluster.length);
-				let color = `#${KMeansPlusPlus.mean(cluster).map(n => Math.round(n).toString(16).padStart(2, '0')).join('')}`;
+				let color = `#${KMeansPlusPlus.mean(...cluster).map(n => Math.round(n).toString(16).padStart(2, '0')).join('')}`;
 				return [color, weight];
 			});
 		}
